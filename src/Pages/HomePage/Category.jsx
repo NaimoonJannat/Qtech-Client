@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import {
   FiPenTool,
   FiTrendingUp,
-  FiMegaphone,
+  FiVolume2,
   FiDollarSign,
   FiMonitor,
   FiCode,
@@ -13,7 +13,7 @@ import {
 const categories = [
   { name: "Design", count: 235, icon: FiPenTool, color: "text-blue-500", bg: "bg-blue-50" },
   { name: "Sales", count: 756, icon: FiTrendingUp, color: "text-green-500", bg: "bg-green-50" },
-  { name: "Marketing", count: 140, icon: FiMegaphone, color: "text-white", bg: "bg-blue-600", active: true },
+  { name: "Marketing", count: 140, icon: FiVolume2, color: "text-white", bg: "bg-blue-600", active: true },
   { name: "Finance", count: 325, icon: FiDollarSign, color: "text-yellow-500", bg: "bg-yellow-50" },
   { name: "Technology", count: 436, icon: FiMonitor, color: "text-purple-500", bg: "bg-purple-50" },
   { name: "Engineering", count: 142, icon: FiCode, color: "text-red-500", bg: "bg-red-50" },
