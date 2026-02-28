@@ -1,5 +1,6 @@
 import Category from "./Category";
 import Companies from "./Companies";
+import FeaturedJobs from "./FeaturedJobs";
 import Hero from "./Hero";
 import PostJobBanner from "./PostJobBanner";
 
@@ -10,6 +11,8 @@ const Home = () => {
            <Companies />
            <Category />
       <PostJobBanner />
+       <FeaturedJobs />
+      <LatestJobs />
         </div>
     );
 };
