@@ -9,9 +9,7 @@ const Navbar = () => {
            <nav className="flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-sm sticky top-0 z-50">
       {/* Logo */}
       <Link to="/" className="flex items-center gap-2">
-        <div className="w-7 h-7 bg-blue-600 rounded-full flex items-center justify-center">
-          <span className="text-white text-xs font-bold">Q</span>
-        </div>
+       <img className="w-7 h-7" src="/logo.png" alt="" />
         <span className="font-bold text-gray-900 text-lg">QuickHire</span>
       </Link>
 

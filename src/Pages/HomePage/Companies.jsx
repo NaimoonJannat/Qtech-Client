@@ -15,7 +15,7 @@ const companies = [
 
 const Companies = () => {
   return (
-    <section className="bg-white px-6 md:px-16 py-10">
+    <section className="bg-white px-6 md:px-48 py-10">
       <p className="text-sm text-gray-400 mb-8">Companies we helped grow</p>
 
       <div className="max-w-5xl flex flex-wrap items-center gap-12 md:gap-20">

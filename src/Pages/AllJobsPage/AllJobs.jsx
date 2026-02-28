@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import JobCard from "../components/JobCard";
+import JobCard from "../HomePage/JobCard";
 import { FiSearch, FiMapPin, FiFilter } from "react-icons/fi";
 
 const categories = [
@@ -49,8 +47,6 @@ const AllJobs = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
-
       {/* Search Bar */}
       <div className="bg-white px-6 md:px-16 py-8 border-b border-gray-100 shadow-sm">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-3">
@@ -137,8 +133,6 @@ const AllJobs = () => {
           )}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

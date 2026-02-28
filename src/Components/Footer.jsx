@@ -11,10 +11,8 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-7 h-7 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white text-xs font-bold">Q</span>
-            </div>
-            <span className="font-bold text-white text-lg">QuickHire</span>
+             <img className="w-7 h-7" src="/logo.png" alt="" />
+        <span className="font-bold text-white text-lg">QuickHire</span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed">
             Great platform for the job seeker that passionate about startups.
