@@ -7,7 +7,7 @@ import PostJobBanner from "./PostJobBanner";
 
 const Home = () => {
     return (
-        <div>
+        <div className="min-h-screen bg-white font-sans">
            <Hero />
            <Companies />
            <Category />
