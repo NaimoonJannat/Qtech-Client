@@ -1,3 +1,4 @@
+import Category from "./Category";
 import Companies from "./Companies";
 import Hero from "./Hero";
 
@@ -6,6 +7,8 @@ const Home = () => {
         <div>
            <Hero />
            <Companies />
+           <Category />
+      <PostJobBanner />
         </div>
     );
 };
