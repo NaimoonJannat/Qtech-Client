@@ -1,6 +1,7 @@
 import Category from "./Category";
 import Companies from "./Companies";
 import Hero from "./Hero";
+import PostJobBanner from "./PostJobBanner";
 
 const Home = () => {
     return (
