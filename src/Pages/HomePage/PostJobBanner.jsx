@@ -1,59 +1,38 @@
 import { Link } from "react-router";
+import dashboardImg from "../../assets/dashboard.png";
 
 const PostJobBanner = () => {
   return (
-    <section className="px-6 md:px-16 py-10">
+    <section className="px-6 md:px-16 py-12">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-blue-600 rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between p-8 md:p-12 gap-8">
-          {/* Text */}
-          <div className="text-white max-w-xs">
-            <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-              Start posting jobs today
+        {/* Outer wrapper — blue left block + white right area side by side */}
+        <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-sm">
+
+          {/* ── Left: Blue CTA block ── */}
+          <div className="bg-blue-600 px-10 py-14 flex flex-col justify-center md:w-[42%] shrink-0">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+              Start posting <br /> jobs today
             </h2>
-            <p className="mt-2 text-blue-100 text-sm">
+            <p className="mt-4 text-blue-100 text-sm">
               Start posting jobs for only $10.
             </p>
             <Link
               to="/admin"
-              className="mt-6 inline-block bg-white text-blue-600 font-semibold text-sm px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors"
+              className="mt-8 inline-block border-2 border-white text-white font-semibold text-sm px-7 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors w-fit"
             >
               Sign Up For Free
             </Link>
           </div>
 
-          {/* Dashboard preview */}
-          <div className="hidden md:block flex-1 max-w-sm">
-            <div className="bg-white rounded-xl shadow-xl p-4">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2 h-2 rounded-full bg-red-400" />
-                <div className="w-2 h-2 rounded-full bg-yellow-400" />
-                <div className="w-2 h-2 rounded-full bg-green-400" />
-              </div>
-              <div className="flex gap-3 mb-3">
-                <div className="bg-blue-50 rounded-lg p-3 flex-1 text-center">
-                  <p className="text-xl font-bold text-blue-600">2,342</p>
-                  <p className="text-xs text-gray-400 mt-1">Total Jobs</p>
-                </div>
-                <div className="bg-green-50 rounded-lg p-3 flex-1 text-center">
-                  <p className="text-xl font-bold text-green-600">158</p>
-                  <p className="text-xs text-gray-400 mt-1">New Today</p>
-                </div>
-                <div className="bg-purple-50 rounded-lg p-3 flex-1 text-center">
-                  <p className="text-xl font-bold text-purple-600">67</p>
-                  <p className="text-xs text-gray-400 mt-1">Applied</p>
-                </div>
-              </div>
-              <div className="h-2 bg-gray-100 rounded-full mb-2">
-                <div className="h-2 bg-blue-400 rounded-full w-3/4" />
-              </div>
-              <div className="h-2 bg-gray-100 rounded-full mb-2">
-                <div className="h-2 bg-green-400 rounded-full w-1/2" />
-              </div>
-              <div className="h-2 bg-gray-100 rounded-full">
-                <div className="h-2 bg-purple-400 rounded-full w-1/4" />
-              </div>
-            </div>
+          {/* ── Right: Dashboard screenshot ── */}
+          <div className="bg-white flex items-center justify-center flex-1 px-8 py-8">
+            <img
+              src={dashboardImg}
+              alt="QuickHire Dashboard"
+              className="w-full max-w-xl object-contain rounded-xl shadow-md"
+            />
           </div>
+
         </div>
       </div>
     </section>

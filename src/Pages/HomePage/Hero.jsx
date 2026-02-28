@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FiSearch, FiMapPin } from "react-icons/fi";
-import heroImg from "../../assets/Pic.png"; 
+import { FiSearch, FiMapPin, FiChevronDown } from "react-icons/fi";
+import heroImg from "../../assets/Pic.png";
 import { useNavigate } from "react-router";
 
 const popularTags = ["UI Designer", "UX Researcher", "Android", "Admin"];
@@ -15,80 +15,125 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-white overflow-hidden px-6 md:px-16 py-12 md:py-20">
-      {/* Background decorative circles */}
-      <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full border border-blue-100 opacity-50 pointer-events-none" />
-      <div className="absolute top-10 right-40 w-64 h-64 rounded-full border border-blue-100 opacity-40 pointer-events-none" />
+    <section className="relative overflow-hidden bg-gray-50">
+      {/* Decorative tilted rectangle outlines — top right */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute top-6 right-[30%] w-48 h-48 border border-indigo-200 opacity-50"
+          style={{ transform: "rotate(14deg)" }}
+        />
+        <div
+          className="absolute top-16 right-[20%] w-72 h-64 border border-indigo-200 opacity-30"
+          style={{ transform: "rotate(14deg)" }}
+        />
+        <div
+          className="absolute top-28 right-[10%] w-96 h-80 border border-indigo-200 opacity-20"
+          style={{ transform: "rotate(14deg)" }}
+        />
+      </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
-        {/* Text Content */}
-        <div className="flex-1 z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            Discover more than{" "}
-            <span className="text-blue-600 border-b-4 border-blue-400">
-              5000+ Jobs
-            </span>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center">
+        {/* ── Left ── */}
+        <div className="flex-1 py-16 md:py-24">
+          {/* Heading */}
+          <h1 className="text-5xl md:text-[3.5rem] font-extrabold text-gray-900 leading-tight tracking-tight">
+            Discover <br /> more than
           </h1>
-          <p className="mt-4 text-gray-500 text-base max-w-md leading-relaxed">
+          <div className="relative inline-block">
+            <h1 className="text-5xl md:text-[3.5rem] font-extrabold text-blue-600 leading-tight tracking-tight">
+              5000+ Jobs
+            </h1>
+            {/* Wavy underline arrow — matches Figma */}
+            <svg
+              viewBox="0 0 310 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute -bottom-3 left-0 w-full"
+            >
+              <path
+                d="M4 12 C60 3, 120 17, 180 10 C230 4, 270 14, 298 8"
+                stroke="#60a5fa"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <path
+                d="M295 6 L308 10 L298 14"
+                stroke="#60a5fa"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
+          </div>
+
+          <p className="mt-8 text-gray-500 text-[15px] max-w-sm leading-relaxed">
             Great platform for the job seeker that searching for new career
             heights and passionate about startups.
           </p>
 
-          {/* Search Bar */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 bg-white shadow-lg rounded-xl p-2 border border-gray-100 max-w-xl">
-            <div className="flex items-center gap-2 flex-1 px-3">
-              <FiSearch className="text-gray-400 shrink-0" />
+          {/* ── Search Bar ── */}
+          <div className="mt-8 flex items-stretch bg-white shadow-lg rounded-xl border border-gray-100 max-w-[520px] overflow-hidden">
+            {/* Keyword input */}
+            <div className="flex items-center gap-2 flex-1 px-4">
+              <FiSearch className="text-gray-400 shrink-0 w-4 h-4" />
               <input
                 type="text"
                 placeholder="Job title or keyword"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
-                className="w-full outline-none text-sm text-gray-700 placeholder-gray-400"
+                onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+                className="w-full outline-none text-sm text-gray-700 placeholder-gray-400 bg-transparent py-4"
               />
             </div>
-            <div className="hidden sm:flex items-center gap-2 px-3 border-l border-gray-200">
-              <FiMapPin className="text-gray-400 shrink-0" />
+
+            {/* Vertical divider */}
+            <div className="w-px bg-gray-150 self-stretch my-3" />
+
+            {/* Location input */}
+            <div className="flex items-center gap-1.5 px-4 w-48 shrink-0">
+              <FiMapPin className="text-gray-400 shrink-0 w-4 h-4" />
               <input
                 type="text"
-                placeholder="Location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full outline-none text-sm text-gray-700 placeholder-gray-400"
+                className="w-full outline-none text-sm text-gray-700 bg-transparent py-4"
               />
+              <FiChevronDown className="text-gray-400 shrink-0 w-4 h-4" />
             </div>
+
+            {/* Button flush to edge */}
             <button
               onClick={handleSearch}
-              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-3 rounded-lg transition-colors shrink-0"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-4 transition-colors shrink-0 rounded-r-xl"
             >
               Search my job
             </button>
           </div>
 
           {/* Popular tags */}
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-gray-500">
-            <span className="font-medium">Popular:</span>
-            {popularTags.map((tag) => (
+          <div className="mt-4 flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+            <span className="font-medium text-gray-600">Popular :</span>
+            {popularTags.map((tag, i) => (
               <button
                 key={tag}
                 onClick={() => navigate(`/jobs?keyword=${tag}`)}
                 className="hover:text-blue-600 transition-colors"
               >
-                {tag}
-                {tag !== popularTags[popularTags.length - 1] && ","}
+                {tag}{i < popularTags.length - 1 && ","}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="flex-1 flex justify-center md:justify-end z-10">
+        {/* ── Right: Hero Image sits at bottom ── */}
+        <div className="hidden md:flex flex-1 justify-end items-end self-end">
           <img
             src={heroImg}
             alt="Job Seeker"
-            className="w-72 md:w-96 object-contain"
-            onError={(e) => {
-              e.target.style.display = "none";
-            }}
+            className="w-[400px] xl:w-[460px] object-contain object-bottom select-none"
+            draggable={false}
           />
         </div>
       </div>

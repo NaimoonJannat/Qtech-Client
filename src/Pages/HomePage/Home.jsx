@@ -12,8 +12,8 @@ const Home = () => {
            <Companies />
            <Category />
       <PostJobBanner />
-       {/* <FeaturedJobs /> */}
-      {/* <LatestJobs /> */}
+       <FeaturedJobs />
+      <LatestJobs />
         </div>
     );
 };

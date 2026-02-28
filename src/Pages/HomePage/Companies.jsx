@@ -1,25 +1,31 @@
+import vodafone from "../../assets/vodafone.png";
+import intel from "../../assets/intel.png";
+import tesla from "../../assets/tesla.png";
+import amd from "../../assets/amd.png";
+import talkit from "../../assets/talkit.png";
+
+// Map your logo assets here — update paths to match wherever you saved the logo images
 const companies = [
-  { name: "Vodafone", logo: null },
-  { name: "Intel", logo: null },
-  { name: "TESLA", logo: null },
-  { name: "AMD", logo: null },
-  { name: "Talkit", logo: null },
+  { name: "Vodafone", logo: vodafone },
+  { name: "Intel",    logo: intel    },
+  { name: "TESLA",    logo: tesla    },
+  { name: "AMD",      logo: amd      },
+  { name: "Talkit",   logo: talkit   },
 ];
 
 const Companies = () => {
   return (
-    <section className="px-6 md:px-16 py-10 bg-white border-t border-b border-gray-100">
-      <p className="text-sm text-gray-400 text-center mb-6">
-        Companies we helped grow
-      </p>
-      <div className="max-w-4xl mx-auto flex flex-wrap items-center justify-center gap-8 md:gap-16">
+    <section className="bg-white px-6 md:px-16 py-10">
+      <p className="text-sm text-gray-400 mb-8">Companies we helped grow</p>
+
+      <div className="max-w-5xl flex flex-wrap items-center gap-12 md:gap-20">
         {companies.map((company) => (
-          <span
+          <img
             key={company.name}
-            className="text-gray-400 font-bold text-lg md:text-xl tracking-wider hover:text-gray-600 transition-colors cursor-default"
-          >
-            {company.name}
-          </span>
+            src={company.logo}
+            alt={company.name}
+            className="h-7 object-contain opacity-50 hover:opacity-80 transition-opacity grayscale"
+          />
         ))}
       </div>
     </section>
